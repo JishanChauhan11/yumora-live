@@ -8,11 +8,13 @@ import Marquee from './components/Marquee';
 import Footer from './components/Footer';
 import About from './components/About';
 import PreOrder from './components/PreOrder';
-// import AdminPanel from './components/AdminPanel'; // We will add this later
+import AdminPanel from './components/AdminPanel'; // ✅ Import this
+import NewArrivals from './components/NewArrivals'; // ✅ Import
 
 const HomePage = () => (
   <>
     <Hero />
+    <NewArrivals /> {/* ✅ Place it here, maybe after Hero or before TechSpecs */}
     <TechSpecs />
     <Marquee />
     <ProductLineup />
@@ -29,6 +31,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/pre-order" element={<PreOrder />} />
           <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/pre-order" element={<PreOrder />} />
+          <Route path="/admin" element={<AdminPanel />} /> {/* ✅ Add this */}
         </Routes>
         <Footer />
       </div>

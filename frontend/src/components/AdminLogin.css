@@ -1,0 +1,198 @@
+/* ADMIN LOGIN PAGE WRAPPER */
+.admin-login-wrapper {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #050505;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+/* Sci-Fi Grid Background */
+.login-background {
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(239, 68, 68, 0.08) 0%, transparent 50%);
+}
+
+.grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(circle, black 40%, transparent 80%);
+}
+
+/* Card Design */
+.login-card {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+/* Security Icon Animation */
+.security-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.icon-circle {
+    position: relative;
+    width: 80px; height: 80px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.fingerprint-icon {
+    color: var(--accent-red);
+    opacity: 0.8;
+}
+
+.scan-line {
+    position: absolute;
+    left: 0; right: 0;
+    height: 2px;
+    background: #fff;
+    box-shadow: 0 0 10px #fff, 0 0 20px var(--accent-red);
+    opacity: 0.7;
+}
+
+.security-header h2 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0 0 5px 0;
+}
+
+.security-header p {
+    color: #666;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Form Styling */
+.input-container {
+    position: relative;
+    background: #0a0a0a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+.input-container:focus-within {
+    border-color: var(--accent-red);
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.15);
+}
+
+.input-container.error-state {
+    border-color: #ef4444;
+    animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.field-icon {
+    margin-left: 15px;
+    color: #555;
+}
+
+.input-container input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 16px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    letter-spacing: 2px;
+}
+
+/* Button */
+.unlock-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--accent-red);
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.2s;
+}
+
+.unlock-btn:hover:not(:disabled) {
+    background: #fff;
+    color: #000;
+    transform: translateY(-2px);
+}
+
+.unlock-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Error & Footer */
+.error-banner {
+    margin-top: 20px;
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.system-status {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: #4ade80;
+}
+
+.status-dot {
+    width: 6px; height: 6px;
+    background: #4ade80;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #4ade80;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
